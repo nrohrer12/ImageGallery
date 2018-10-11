@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2041
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageGallery", "ImageGallery\ImageGallery.csproj", "{B6BE2C18-16EA-4716-A841-0C688C1E2912}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageGallery.Data", "ImageGallery.Data\ImageGallery.Data.csproj", "{CC701DD6-1D7D-4776-A530-3199E74374C2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6BE2C18-16EA-4716-A841-0C688C1E2912}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6BE2C18-16EA-4716-A841-0C688C1E2912}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6BE2C18-16EA-4716-A841-0C688C1E2912}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6BE2C18-16EA-4716-A841-0C688C1E2912}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC701DD6-1D7D-4776-A530-3199E74374C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC701DD6-1D7D-4776-A530-3199E74374C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC701DD6-1D7D-4776-A530-3199E74374C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC701DD6-1D7D-4776-A530-3199E74374C2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B465C78-3AB5-40EF-8644-B707D2D8662A}
+	EndGlobalSection
+EndGlobal
