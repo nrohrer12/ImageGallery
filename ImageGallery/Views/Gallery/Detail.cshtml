@@ -1,0 +1,35 @@
+﻿@model ImageGallery.Models.GalleryDetailModel
+
+<div class="container body-content">
+    <div class="row image-detail-container drop-shadow">
+        <div class="image-detail" style="background-image:url(@Model.Url)">
+        </div>
+    </div>
+    <div class="row image-detail-meta">
+       <h4>Title: @Model.Title</h4>
+       <h4>Uploaded: @Model.CreatedAt</h4>
+       <div style="padding: 10px; ">
+           
+           <table>
+               <thead style="margin:4px; font-weight:700;">
+                   Tags:
+               </thead>
+               <tbody>
+                   <tr>
+                       @foreach (var tag in Model.Tags)
+                       {
+                           <td>
+                               <p style="font-weight: bold; margin: 4px">@tag,  </p>
+                           </td>
+                       }
+                   </tr>
+                   </tbody>
+               </table>
+           
+       </div>
+
+    </div>
+    <div class="row controls">
+        <a class="btn btn-primary" asp-controller="Gallery" asp-action="Index">Back To Gallery</a>
+    </div>
+</div>

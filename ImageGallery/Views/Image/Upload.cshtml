@@ -1,0 +1,90 @@
+﻿@model ImageGallery.Models.UploadImageModel
+
+<div class="container body-content">
+    <h3>Upload Image</h3>
+    <div class="row upload-container">
+        <div class="upload-form drop-shadow">
+            <form asp-action="UploadNewImage" method="post" enctype="multipart/form-data" id="upload-form">
+                <div class="form-group">
+                    <label asp-for="Title"></label>
+                    <input asp-for="Title" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Tags"></label>
+                    <input asp-for="Tags" class="form-control" />
+                </div>
+                <div class="form-group">
+                    
+
+                        <div class="col-sm-4">
+
+                            <div class="input-group">
+
+                                <div class="input-group-btn">
+
+                                    <label class="btn btn-primary btn-file">
+                                        Browse <input type="file" id='fileUpload' name='file' style="display:none;" onchange="ShowUploadFilename()" accept=".jpg, .png, .jpeg" />
+                                       </label>
+
+                                </div>
+                                <div class="input-group-btn">
+                                    <input type="text" class="form-control" id="txtFileName" style="width:600px;" placeholder="Select file..." readonly>
+                                </div>
+                                <div class="input-group-btn">
+
+                                    <button type="submit" id="btnUploadFile" class="btn btn-info" disabled data-toggle="tooltip" data-placement="top" data-title="Upload file to server.">
+                                            
+                                        Upload
+
+                                        <i class="fas fa-upload"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+ 
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function ShowUploadFilename() {
+
+        //alert('Selected file: ' + $("#fileUpload").get(0).files.item(0).name);
+
+        //alert('Selected file: ' + $("#fileUpload").get(0).files.item(0).size);
+
+        //alert('Selected file: ' + $("#fileUpload").get(0).files.item(0).type);
+
+        var fileTxt = $('#fileUpload').get(0).files.item(0).name;
+
+        var ext = fileTxt.split('.').pop().toLowerCase();
+
+        if ($.inArray(ext, ['jpg', 'png', 'jpeg']) == -1) {
+
+            ShowValidationMessage("Invalid file type extension chosen.")
+
+            var $el = $('#fileUpload');
+
+            $el.wrap('<form>').closest('form').get(0).reset();
+
+            $el.unwrap();
+
+            return;
+
+        }
+        //+ "  <br/>    Size: "+($("#fileUpload").get(0).files.item(0).size/1000)+"Kb";
+        $("#txtFileName").val(fileTxt);
+
+        $("#btnUploadFile").prop("disabled", false);
+
+    }
+
+    
+</script>
